@@ -25,6 +25,14 @@ commentApp.controller('CommentController', ['$scope', function($scope){
             "Type":"Professor",
             "Comment":"Working Here is a pleasure.",
             "Date":"11/20/2018"
+        },
+        {
+            "Page":"Opportunity",
+            "Category":"Computing Club",
+            "Rating":"4",
+            "Type":"Student",
+            "Comment":"Very good events, and a lot of free food",
+            "Date":"11/20/2018"
         }
         
     ];
