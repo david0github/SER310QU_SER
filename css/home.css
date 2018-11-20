@@ -20,6 +20,11 @@
     background-color: gold;
 }
 
+.nav-btn{
+    border-color: midnightblue;
+    width:100%;
+}
+
 .bottom-align{
     position: absolute;
     bottom: 0;
@@ -38,9 +43,16 @@
 .btn-secondary{
     color: white;
     background-color: midnightblue;
-     width: 100%;
+    width: 100%;
     margin: 5%;
     
+}
+
+.nav-col{
+    background-color: midnightblue;
+    text-align: center;
+    padding-right: 2%;
+    height: 700px;
 }
 
 .btn-primary{
