@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="CommentedApp">
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
   <link rel = "stylesheet" href = "css/home.css">
+  <script src="http://code.angularjs.org/1.2.6/angular.js"></script>
+  <script type = "text/javascript" src = "js/comments.js"></script>
     
 </head>
 <body>
@@ -52,19 +54,69 @@
     <div class = "col-lg-9">
         <div class = "card">
             <!--bread crumbs for each page-->
-            <div class = "card-header">Bachlor is SE/Home</div>
+            <div class = "card-header card-main-head">Bachlor is SE/Home</div>
             <div class = "card-body">
                 <!--main content of page-->
+                <div id="demo" class="carousel slide" data-ride="carousel">
+
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class = "img-car" src="images/SlideImage1.jpg" alt="">
+      <div class="carousel-caption">
+        <h3>We are a team</h3>
+        <p>Our team efforts create new things</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img  class = "img-car" src="images/SlideImage2.jpg" alt="">
+      <div class="carousel-caption">
+        <h3>We Support Curiousity</h3>
+        <p>Our team efforts create new things</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img  class = "img-car" src="images/SlideImage3.jpg" alt="">
+      <div class="carousel-caption">
+        <h3>We support eachother</h3>
+        <p>Our team efforts create new things</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+
+</div>
+    <!--end carousel-->            
+    <a href = "https://admissions.quinnipiac.edu/apply/"><button class = "btn btn-primary">Apply Now</button></a>
             </div>
         </div>
     </div>
     
     <!--col for the comments-->
     <div class = "col-lg-3">
-        <div class = "card">
-            <div class = "card-header">Comments</div>
-            <div class = "card-body">
+        <div class = "card comment-card">
+            <div class = "card-header card-main-head">Comments</div>
+            <div class = "card-body" ng-controller="CommentController">
                 <!--comments go here-->
+                <div class = "card ind-comm-card" ng-repeat="comment in comments | filter:{Page:'Home'}">
+                    <div class = "card-header comm-head">{{comment.Category}}, {{comment.Rating}}/5, ~{{comment.Type}}</div>
+                    <p class = "card-text">{{comment.Comment}}</p>
+                    <p class = "card-text comm-date">{{comment.Date}}</p>
+                </div>
             
             </div>
         
