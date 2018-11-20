@@ -112,7 +112,7 @@
             <div class = "card-header card-main-head">Comments</div>
             <div class = "card-body" ng-controller="CommentController">
                 <!--comments go here-->
-                <div class = "card ind-comm-card" ng-repeat="comment in comments">
+                <div class = "card ind-comm-card" ng-repeat="comment in comments | filter:{Page:'Home'}">
                     <div class = "card-header comm-head">{{comment.Category}}, {{comment.Rating}}/5, ~{{comment.Type}}</div>
                     <p class = "card-text">{{comment.Comment}}</p>
                     <p class = "card-text comm-date">{{comment.Date}}</p>
