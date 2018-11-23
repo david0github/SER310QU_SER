@@ -6,6 +6,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
   <link rel = "stylesheet" href = "css/faculty.css">
+  <script src="http://code.angularjs.org/1.2.6/angular.js"></script>
+  <script type = "text/javascript" src = "js/comments.js"></script>
 
 </head>
 <body>
@@ -52,9 +54,42 @@
     <div class = "col-lg-9">
         <div class = "card">
             <!--bread crumbs for each page-->
-            <div class = "card-header">Bachlor is SE/Faculty</div>
+            <div class = "card-header card-main-head">Bachlor is SE/Faculty</div>
             <div class = "card-body">
                 <!--main content of page-->
+
+<!-- side nav bar, toggling to be implemented -->
+<div class = "row">
+<div class = "col-lg-2 rounded nav-col">
+    <div><a><button class = "btn btn-secondary nav-btn">Faculty</button></a></div>
+    <div><a><button class = "btn btn-secondary nav-btn">Facilities</button></a></div>
+</div>
+
+<!-- the main content angular to be implemented -->
+<div class = "col-lg-10">
+   <div class = "card main-ind-card">
+          <h5 class = "card-title">Jonathan Blake, PhD</h5>
+          <p1>Program Director, Professor of Computer Science and Software Engineering. Education: BSE, Princeton University; MS, PhD, Northwestern University.</p1>
+          <p><i>Jonathan.Blake@quinnipiac.edu</i></p>
+    </div>
+    <div class = "card main-ind-card">
+          <h5 class = "card-title">Stefan Christov, PhD</h5>
+          <p1>Assistant Professor of Software Engineering. Education: BS, SUNY College Brockport; MS, PhD, University of Massachusetts-Amherst.</p1>
+          <p><i>Stefan.Christov@quinnipiac.edu</i></p>
+    </div>
+    <div class = "card main-ind-card">
+          <h5 class = "card-title"> Ruby ElKharboutly, PhD</h5>
+          <p1>Assistant Professor of Software Engineering. Education: BS, MS, American University in Cairo; PhD, University of Connecticut.</p1>
+          <p><i>Ruby.ElKharboutly@quinnipiac.edu</i></p>
+    </div>
+    <div class = "card main-ind-card">
+          <h5 class = "card-title">Mark Hoffman, PhD</h5>
+          <p1>Professor of Computer Science and Software Engineering. Education: BS, MS, University of New Haven; PhD, Polytechnic University Brooklyn.</p1>
+          <p><i>Mark.Hoffman@quinnpiac.edu</i></p>
+    </div>
+</div>
+</div>
+
             </div>
         </div>
     </div>
