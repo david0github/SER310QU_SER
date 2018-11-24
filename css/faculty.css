@@ -36,8 +36,14 @@
     text-align: left;
     padding: 2%;
     border-color: midnightblue;
-    max-height: 20%;
+    max-height: 24%;
     margin-top: 1%;
+}
+
+.text1{
+    margin-left: 17%;
+    float: right;
+    position: absolute;
 }
 
 .action-buttons{
@@ -76,7 +82,7 @@
     text-align: left;
 }
 .card-text{
-    text-align: left;
+    text-align: right;
 }
 
 .row{
@@ -110,3 +116,10 @@
     color: white;
     text-align: left;
 }
+.circleimg1{
+    width: 150px;
+    height: 150px;
+    border-radius: 150%;
+}
+
+
