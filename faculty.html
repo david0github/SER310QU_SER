@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="css/home.css">
     <script src="http://code.angularjs.org/1.2.6/angular.js"></script>
     <script type="text/javascript" src="js/comments.js"></script>
-    <script type="text/javascript" src="js/faculty.js"></script>
 
 </head>
 
@@ -104,7 +103,7 @@
                 <div class="card-header card-main-head">Comments</div>
                 <div class="card-body" ng-controller="CommentController">
                     <!--comments go here-->
-                    <div class="card ind-comm-card" ng-repeat="comment in comments | filter:{Page:'Opportunity'}">
+                    <div class="card ind-comm-card" ng-repeat="comment in comments | filter:{Page:'Fac'}">
                         <div class="card-header comm-head">{{comment.Category}}, {{comment.Rating}}/5, ~{{comment.Type}}</div>
                         <p class="card-text">{{comment.Comment}}</p>
                         <p class="card-text comm-date">{{comment.Date}}</p>
