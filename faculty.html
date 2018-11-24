@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="CommentedApp">
 
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="css/faculty.css">
+    <link rel="stylesheet" href="css/home.css">
     <script src="http://code.angularjs.org/1.2.6/angular.js"></script>
     <script type="text/javascript" src="js/comments.js"></script>
+    <script type="text/javascript" src="js/faculty.js"></script>
 
 </head>
 
@@ -46,7 +47,9 @@
         </div>
         <div class="action-buttons">
             <div><button class="btn btn-secondary">Login</button></div>
-            <div><button class="btn btn-secondary">Apply Now</button></div>
+            <a href="https://admissions.quinnipiac.edu/apply/">
+                <div><button class="btn btn-secondary">Apply Now</button></div>
+            </a>
         </div>
     </nav>
     <!-- end navbar-->
@@ -54,53 +57,40 @@
     <div class="row row-one">
         <!-- col for main part of page-->
         <div class="col-lg-9">
-            <div class="card">
+            <div class="card" ng-controller = "FacultyPageController">
                 <!--bread crumbs for each page-->
-                <div class="card-header card-main-head">Bachlor is SE/Faculty</div>
+                <div class="card-header card-main-head">Bachlor is SE/Opportunity/Clubs</div>
                 <div class="card-body">
                     <!--main content of page-->
 
                     <!-- side nav bar, toggling to be implemented -->
                     <div class="row">
                         <div class="col-lg-2 rounded nav-col">
-                            <div><a><button class="btn btn-secondary active nav-btn">Faculty</button></a></div>
-                            <div><a><button class="btn btn-secondary nav-btn">Facilities</button></a></div>
+                            <div><button class="btn btn-secondary nav-btn" ng-click="setSection('Faculty')" value = "Faculty">Faculty</button></div>
+                            <div><button class="btn btn-secondary nav-btn" ng-click="setSection('Facilities')" value = "Facilities">Facilities</button></div>
                         </div>
 
                         <!-- the main content angular to be implemented -->
-                        <div class="col-lg-10">
-                            <div class="card main-ind-card">
-                                <img class="circleimg1" src="images/blake.png">
-                                <div class="text1">
-                                    <h5>Jonathan Blake, PhD</h5>
-                                    <p1>Program Director, Professor of Computer Science and Software Engineering. Education: BSE, Princeton University; MS, PhD, Northwestern University.</p1>
-                                    <p>Contact Information: <i>Jonathan.Blake@quinnipiac.edu</i></p>
+                        <div class="col-lg-10" style = "overflow-y: scroll; max-height: 700px;">
+                            <div class="card main-ind-card" ng-repeat = "piece in content | filter:{Section: current_section.Section } ">
+                                <div class = "row">
+                                <div class = "col-lg-2">
+                                    <img src = {{piece.Image}} class = "rounded-circle main-ind-card-img">
+                                </div>
+            
+                                <div class = "col-sm-10">
+                                     <h5>{{piece.Title}}</h5>
+                                    <p1>{{piece.Detail1}}</p1>
+                                    <p>{{piece.Detail2}}</p>
+                                </div>
+                                    
                                 </div>
                             </div>
-                            <div class="card main-ind-card">
-                                <img class="circleimg1" src="images/christov.png">
-                                <div class="text1">
-                                    <h5>Stefan Christov, PhD</h5>
-                                    <p1>Assistant Professor of Software Engineering. Education: BS, SUNY College Brockport; MS, PhD, University of Massachusetts-Amherst.</p1>
-                                    <p>Contact Information: <i>Stefan.Christov@quinnipiac.edu</i></p>
-                                </div>
-                            </div>
-                            <div class="card main-ind-card">
-                                <img class="circleimg1" src="images/ruby.png">
-                                <div class="text1">
-                                    <h5> Ruby ElKharboutly, PhD</h5>
-                                    <p1>Assistant Professor of Software Engineering. Education: BS, MS, American University in Cairo; PhD, University of Connecticut.</p1>
-                                    <p>Contact Information: <i>Ruby.ElKharboutly@quinnipiac.edu</i></p>
-                                </div>
-                            </div>
-                            <div class="card main-ind-card">
-                                <img class="circleimg1" src="images/hoffman.png">
-                                <div class="text1">
-                                    <h5>Mark Hoffman, PhD</h5>
-                                    <p1>Professor of Computer Science and Software Engineering. Education: BS, MS, University of New Haven; PhD, Polytechnic University Brooklyn.</p1>
-                                    <p>Contact Information: <i>Mark.Hoffman@quinnpiac.edu</i></p>
-                                </div>
-                            </div>
+                            
+                            
+                            
+                           
+                            
                         </div>
                     </div>
 
@@ -110,10 +100,15 @@
 
         <!--col for the comments-->
         <div class="col-lg-3">
-            <div class="card">
+            <div class="card comment-card">
                 <div class="card-header card-main-head">Comments</div>
-                <div class="card-body">
+                <div class="card-body" ng-controller="CommentController">
                     <!--comments go here-->
+                    <div class="card ind-comm-card" ng-repeat="comment in comments | filter:{Page:'Opportunity'}">
+                        <div class="card-header comm-head">{{comment.Category}}, {{comment.Rating}}/5, ~{{comment.Type}}</div>
+                        <p class="card-text">{{comment.Comment}}</p>
+                        <p class="card-text comm-date">{{comment.Date}}</p>
+                    </div>
 
                 </div>
 

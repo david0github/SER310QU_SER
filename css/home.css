@@ -21,6 +21,10 @@
     background-color: gold;
 }
 
+.main-ind-card-img{
+    width: 85%;
+}
+
 .nav-btn {
     border-color: midnightblue;
     width: 100%;
@@ -37,8 +41,8 @@
     text-align: left;
     padding: 2%;
     border-color: midnightblue;
-    max-height: 20%;
     margin-top: 1%;
+    height: 25%;
 }
 
 .action-buttons {
@@ -89,10 +93,6 @@
 .row-one {
     text-align: center;
     margin-top: 7%;
-}
-
-.card {
-    height: 100%;
 }
 
 .comm-date {
