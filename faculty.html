@@ -58,7 +58,7 @@
         <div class="col-lg-9">
             <div class="card" ng-controller = "FacultyPageController">
                 <!--bread crumbs for each page-->
-                <div class="card-header card-main-head">Bachlor is SE/Opportunity/Clubs</div>
+                <div class="card-header card-main-head">Bachlor is SE/Opportunities/{{current_section.Section}}</div>
                 <div class="card-body">
                     <!--main content of page-->
 
@@ -69,7 +69,7 @@
                             <div><button class="btn btn-secondary nav-btn" ng-click="setSection('Facilities')" value = "Facilities">Facilities</button></div>
                         </div>
 
-                        <!-- the main content angular to be implemented -->
+
                         <div class="col-lg-10" style = "overflow-y: scroll; max-height: 700px;">
                             <div class="card main-ind-card" ng-repeat = "piece in content | filter:{Section: current_section.Section } ">
                                 <div class = "row">

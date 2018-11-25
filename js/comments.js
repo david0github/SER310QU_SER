@@ -1,5 +1,109 @@
 var commentApp = angular.module('CommentedApp', []);
 
+commentApp.controller('AlumniController', ['$scope', function($scope){
+    $scope.current_section = {
+        "Section":"Career Service"
+    }
+    
+    $scope.setSection = function(newSection){
+        $scope.current_section.Section=newSection;
+    }
+    
+    $scope.content = [
+        {
+            "Image":"images/careerfair.jpg",
+            "Title":"Resume Reviews",
+            "Detail1":"The professors will provide thorough resume reviews to student sot help them get a job",
+            "Detail2":"Make sure to ask your advisor!",
+            "Section":"Career Service"
+        },
+        {
+            "Image":"images/queso.jpg",
+            "Title":"Alumni Weekend",
+            "Detail1":"Alumni that have been all over the country come together to see their classmates and the new students",
+            "Detail2":"Watch out for it on the Calendar",
+            "Section":"Events"
+        },
+        {
+            "Image":"images/computingClubImage.jpg",
+            "Title":"Hackathon Judging",
+            "Detail1":"The semi-annual Hackathon is often Judged my a few Alumni as well as Industry professionals and Professors",
+            "Detail2":"Watch out for it on the Calendar",
+            "Section":"Events"
+        },
+        {
+            "Image":"images/imageQ.jpg",
+            "Title":"Alumni & Alumni Affrairs Office",
+            "Detail1":"Committed to helping you sustain a lifelong and meaningful relationship with Quinnipiac University. We strive to offer you valuable and exclusive benefits, volunteer opportunities and engaging experiences throughout the year to keep you close to your alma mater.",
+            "Detail2":"Email at: mailto:alumni@qu.edu",
+            "Section":"Alumni Support"
+        },
+        {
+            "Image":"images/DonaldWeinbach.jpg",
+            "Title":"Donald J. Weinbach",
+            "Detail1":"Vice President of Alumni & Alumni Affrairs Office. He holds a bachelor's degree in political science from Merrimack College.",
+            "Detail2":"COntact at: 203-582-8908",
+            "Section":"Alumni Support"
+        }
+    ]
+}]);
+
+commentApp.controller('OpportunityController', ['$scope', function($scope){
+       $scope.current_section = {
+        "Section":"Clubs"
+    }
+    
+    $scope.setSection = function(newSection){
+        $scope.current_section.Section=newSection;
+    }
+    
+        $scope.content = [
+        {
+            "Image":"images/computingClubImage.jpg",
+            "Title":"Computing Club",
+            "Detail1":"Club known for Hosting events and programming challanges",
+            "Detail2":"Website www.QuinnipiacComputingClubs.com",
+            "Section":"Clubs"
+        },
+        {
+            "Image":"images/queso.jpg",
+            "Title":"QUESO",
+            "Detail1":"The biggest programing and computer club at Quinnipiac",
+            "Detail2":"Website www.QUESO.com",
+            "Section":"Clubs"
+        },
+        {
+            "Image":"images/etaPi.jpg",
+            "Title":"eta Pi Honors Society",
+            "Detail1":"Quinnipiac is starting a branch of Alpha Eta Pi one of the oldest Honors Engineering Societies",
+            "Detail2":"Website www.etaPi.com",
+            "Section":"Organizations"
+        },
+        {
+            "Image":"images/prattwhitney.jpg",
+            "Title":"Pratt & Whitney",
+            "Detail1":"Have Partnered with Quinnipiac to provide Mechanical and Software Engineers with internships",
+            "Detail2":"Website www.prattandwhitney.com",
+            "Section":"Internships"
+        },
+        {
+            "Image":"images/cigna.png",
+            "Title":"Software Developer Cigna",
+            "Detail1":"Creating Web and Mobile Applicatinons ant cigna health insurance",
+            "Detail2":"Website www.cigna.com",
+            "Section":"Jobs"
+        },
+        {
+            "Image":"images/careerfair.jpg",
+            "Title":"Quinnipiac Career Fair",
+            "Detail1":"Career fair with over 200 Companies to find internships at",
+            "Detail2":"Watch out for in the Calendar",
+            "Section":"Events"
+        }
+    ];
+    
+}])
+
 commentApp.controller('CommentController', ['$scope', function($scope){
     $scope.comments = [
         {

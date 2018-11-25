@@ -56,26 +56,40 @@
     <div class="row row-one">
         <!-- col for main part of page-->
         <div class="col-lg-9">
-            <div class="card">
+            <div class="card" ng-controller = "OpportunityController">
                 <!--bread crumbs for each page-->
-                <div class="card-header card-main-head">Bachlor is SE/Opportunity/Clubs</div>
+                <div class="card-header card-main-head">Bachlor is SE/Opportunity/{{current_section.Section}}</div>
                 <div class="card-body">
                     <!--main content of page-->
 
                     <!-- side nav bar, toggling to be implemented -->
                     <div class="row">
                         <div class="col-lg-2 rounded nav-col">
-                            <div><a><button class="btn btn-secondary nav-btn">Clubs</button></a></div>
-                            <div><a><button class="btn btn-secondary nav-btn">Internships</button></a></div>
-                            <div><a><button class="btn btn-secondary nav-btn">Organizations</button></a></div>
+                            <div><button class="btn btn-secondary nav-btn" ng-click="setSection('Clubs')">Clubs</button></div>
+                            <div><button class="btn btn-secondary nav-btn" ng-click="setSection('Organizations')">Organizations</button></div>
+                            <div><button class="btn btn-secondary nav-btn" ng-click="setSection('Internships')" >Internships</button></div>
+                            <div><button class="btn btn-secondary nav-btn" ng-click="setSection('Jobs')" >Jobs</button></div>
+                            <div><button class="btn btn-secondary nav-btn" ng-click="setSection('Events')" >Events</button></div>
                         </div>
 
-                        <!-- the main content angular to be implemented -->
-                        <div class="col-lg-10" style = "overflow-y: scroll; max-height: 700px;" >
-                            <div class="card main-ind-card">
-                                <h5 class="card-title">Stefan Christov</h5>
-                                <p>Has been at Quinnipiac for many years</p>
+
+                        <div class="col-lg-10" style = "overflow-y: scroll; max-height: 700px;">
+                            <div class="card main-ind-card" ng-repeat = "piece in content | filter:{Section: current_section.Section } ">
+                                <div class = "row">
+                                <div class = "col-lg-2">
+                                    <img src = {{piece.Image}} class = "rounded-circle main-ind-card-img">
+                                </div>
+            
+                                <div class = "col-sm-10">
+                                     <h5>{{piece.Title}}</h5>
+                                    <p1>{{piece.Detail1}}</p1>
+                                    <p>{{piece.Detail2}}</p>
+                                </div>
+                                    
+                                </div>
                             </div>
+                            
+                            
                             
                            
                             
@@ -92,7 +106,7 @@
                 <div class="card-header card-main-head">Comments</div>
                 <div class="card-body" ng-controller="CommentController">
                     <!--comments go here-->
-                    <div class="card ind-comm-card" ng-repeat="comment in comments | filter:{Page:'Opportunity'}">
+                    <div class="card ind-comm-card" ng-repeat="comment in comments | filter:{Page:'opportunity'}">
                         <div class="card-header comm-head">{{comment.Category}}, {{comment.Rating}}/5, ~{{comment.Type}}</div>
                         <p class="card-text">{{comment.Comment}}</p>
                         <p class="card-text comm-date">{{comment.Date}}</p>
