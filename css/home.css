@@ -118,3 +118,98 @@
     color: white;
     text-align: left;
 }
+
+.buttonlogin{
+    background-color: #1686d9;
+    border: 2px solid white;
+    border-radius: 30px;
+    text-decoration: none;
+    padding: 10px 28px;
+    color: white;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.buttonlogin:hover {
+    color: #1686d9;
+		border: 2px solid #1686d9;
+        background-color: white;
+}
+
+.loginbtn{
+    background-color: #1686d9;
+    border: 2px solid white;
+    border-radius: 30px;
+    text-decoration: none;
+    padding: 10px 28px;
+    color: white;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.loginbtn:hover {
+    color: #1686d9;
+		border: 2px solid #1686d9;
+        background-color: white;
+}
+
+.apply{
+    background-color: #1686d9;
+    border: 2px solid white;
+    border-radius: 30px;
+    text-decoration: none;
+    padding: 10px 28px;
+    color: white;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.apply:hover {
+    color: #1686d9;
+		border: 2px solid #1686d9;
+        background-color: white;
+}
+
+.bg-modal{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.modal-content{
+    width: 600px;
+    height: 400px;
+    background-color: white;
+    border-radius: 4px;
+    text-align: center;
+    padding: 20px;
+}
+
+.modalQ{
+    margin-left: 35%;
+    width: 150px;
+    height: 150px;
+}
+
+.input{
+    width: 50%;
+    display: block;
+    margin: 15px auto;
+
+}
+
+.close{
+    position: absolute;
+    top: 0;
+    right: 14px;
+    font-size: 42px;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+
