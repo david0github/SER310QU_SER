@@ -225,10 +225,23 @@ commentApp.controller('FacultyPageController', ['$scope', function($scope){
     
 }]);
 
-document.getElementById('.buttonlogin').addEventListener("click", function() {
-	document.querySelector('.bg-modal').style.display = "flex";
-});
+var modal = document.getElementById('bg-modal');
 
-document.querySelector('.close').addEventListener("click", function() {
-	document.querySelector('.bg-modal').style.display = "none";
-});
+var btn = document.getElementById('buttonlogin');
+
+var span = document.getElementById('close')[0];
+
+btn.onclick = function(){
+    modal.style.display = "flex";
+}
+
+span.onclick = function(){
+    modal.style.display = "none";
+}
+
+window.onclick = function(event){
+    if (event.target == modal){
+        modal.style.display = "none";
+    }
+}
+
