@@ -49,7 +49,7 @@ commentApp.controller('AlumniController', ['$scope', function($scope){
 }]);
 
 commentApp.controller('OpportunityController', ['$scope', function($scope){
-       $scope.current_section = {
+    $scope.current_section = {
         "Section":"Clubs"
     }
     
@@ -105,6 +105,16 @@ commentApp.controller('OpportunityController', ['$scope', function($scope){
 }])
 
 commentApp.controller('CommentController', ['$scope', function($scope){
+    $scope.isLoggedIn = false;
+    
+    $scope.toggleLoggedIn = function(){
+        if ($scope.isLoggedIn == false){
+            $scope.isLoggedIn = true;
+        } else {
+            $scope.isLoggedIn = false;
+        }
+    }
+    
     $scope.comments = [
         {
             "Page":"Home",
@@ -224,24 +234,4 @@ commentApp.controller('FacultyPageController', ['$scope', function($scope){
     
     
 }]);
-
-var modal = document.getElementById('bg-modal');
-
-var btn = document.getElementById('buttonlogin');
-
-var span = document.getElementById('close')[0];
-
-btn.onclick = function(){
-    modal.style.display = "flex";
-}
-
-span.onclick = function(){
-    modal.style.display = "none";
-}
-
-window.onclick = function(event){
-    if (event.target == modal){
-        modal.style.display = "none";
-    }
-}
 
