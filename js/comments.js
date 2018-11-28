@@ -108,10 +108,39 @@ commentApp.controller('CommentController', ['$scope', function($scope){
     $scope.isLoggedIn = false;
     
     $scope.toggleLoggedIn = function(){
-        if ($scope.isLoggedIn == false){
+        if($scope.LoginForm.$valid){
+            if ($scope.isLoggedIn == false){
             $scope.isLoggedIn = true;
+            } else {
+                $scope.isLoggedIn = false;
+            }
         } else {
-            $scope.isLoggedIn = false;
+            alert("Please enter a valid Email and Password")
+        }
+        
+    }
+    
+    $scope.new_comment = {};
+    $scope.new_comment.Rating = 5;
+    
+    $scope.newCommentSet = function(page){
+        $scope.new_comment.Page = page;
+        $scope.new_comment.Type = "Student"
+    }
+    
+    $scope.submitComment = function(comment){
+        if($scope.CommentForm.$valid){
+            var date = new Date();
+            var month = date.getMonth();
+            var day = date.getDate();
+            var year = date.getFullYear();
+
+            $scope.new_comment.Date = day + "/" + month + "/" + year;
+            $scope.comments.push(comment);
+            $scope.new_comment = {};
+            $scope.new_comment.Rating = 5;
+        } else {
+            alert("Please Enter the Category and your Comment")
         }
     }
     
