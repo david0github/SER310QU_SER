@@ -61,7 +61,12 @@
         <div class="col-lg-9">
             <div class="card" ng-controller = "OpportunityController">
                 <!--bread crumbs for each page-->
-                <div class="card-header card-main-head">Bachlor is SE/Opportunity/{{current_section.Section}}</div>
+                <div class="card-header card-main-head">Bachlor is SE/Opportunity/{{current_section.Section}}
+                <div class = search style = "float:right;">
+                    <input type = "text">
+                    <button class = "btn btn-warning">Search</button>
+                </div>
+                </div>
 
                 <div class="card-body">
                     <!--main content of page-->
