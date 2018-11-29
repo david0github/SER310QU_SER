@@ -150,7 +150,7 @@ commentApp.controller('CommentController', ['$scope', function($scope){
             "Category":"QU",
             "Rating":"4",
             "Type":"Alumni",
-            "Comment":"I loved it! home",
+            "Comment":"I loved it!",
             "Date":"11/20/2018"
         },
         {
@@ -158,15 +158,15 @@ commentApp.controller('CommentController', ['$scope', function($scope){
             "Category":"QU",
             "Rating":"5",
             "Type":"Professor",
-            "Comment":"Working Here is a pleasure. fac",
+            "Comment":"Working Here is a pleasure",
             "Date":"11/20/2018"
         },
         {
             "Page":"Curriculum",
-            "Category":"QU",
+            "Category":"General",
             "Rating":"5",
             "Type":"Professor",
-            "Comment":"Working Here is a pleasure. cur",
+            "Comment":"The curriculum really provides the students with good skillset",
             "Date":"11/20/2018"
         },
         {
@@ -174,23 +174,23 @@ commentApp.controller('CommentController', ['$scope', function($scope){
             "Category":"Computing Club",
             "Rating":"4",
             "Type":"Student",
-            "Comment":"Very good events, and a lot of free food opp",
+            "Comment":"Very good events, and a lot of free food",
             "Date":"11/20/2018"
         },
         {
             "Page":"Alumni",
-            "Category":"Computing Club",
+            "Category":"Staff",
             "Rating":"4",
             "Type":"Student",
-            "Comment":"Very good events, and a lot of free food alum",
+            "Comment":"Very helpfull staff! So nice!",
             "Date":"11/20/2018"
         },
         {
             "Page":"Calendar",
-            "Category":"Computing Club",
+            "Category":"Schduke",
             "Rating":"4",
             "Type":"Student",
-            "Comment":"Very good events, and a lot of free food cal",
+            "Comment":"A lot of opportunities for good events.",
             "Date":"11/20/2018"
         }
     ];
